@@ -9,16 +9,54 @@
         android:layout_width="match_parent"
         android:layout_height="440dp"
         android:layout_marginTop="154dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/my_button"
+
+        <GridLayout
+            android:id="@+id/grid_layout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:columnCount="2"
+            android:rowCount="3"
+            android:useDefaultMargins="true"
+            android:alignmentMode="alignMargins">
 
-            android:contentDescription="@string/start_hunt_button"
-            android:src="@drawable/main_menu_start_butt" />
+            <ImageButton
+                android:id="@+id/start_button"
+                android:layout_width="188dp"
+                android:layout_height="144dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_columnWeight="0"
+
+                android:scaleType="fitCenter"
+                android:src="@drawable/main_menu_start_butt" />
+
+            <ImageButton
+                android:id="@+id/view_button"
+                android:layout_width="206dp"
+                android:layout_height="126dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="0"
+                android:layout_gravity="center"
+                android:src="@drawable/main_menu_view_hunt_butt" />
+
+            <fragment
+                android:id="@+id/map"
+                class="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_row="1"
+                android:layout_column="0"
+                android:layout_columnSpan="2"
+                android:layout_rowSpan="2" />
+
+
+
+
+
+        </GridLayout>
     </LinearLayout>
 
 </RelativeLayout>
