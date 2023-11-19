@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ScavengerHunt</string>
+    <string name="pois_nearby">12 POIs nearby!</string>
     <string name="start_hunt_button">Start Hunt Button</string>
 </resources>
