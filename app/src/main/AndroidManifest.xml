@@ -37,6 +37,9 @@
         <activity
             android:name=".PoiSelectionActivity"
             android:exported="false" />
+        <activity
+            android:name=".AchieveActivity"
+            android:exported="false" />
 
         <!-- MainActivity -->
         <activity

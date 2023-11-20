@@ -7,12 +7,16 @@
     tools:context=".AchieveActivity"
     android:background="@drawable/user_achievements">
 
-    <Button
+    <ImageButton
         android:id="@+id/achieve_back_button"
-        android:layout_width="61dp"
-        android:layout_height="47dp"
-        android:alpha="0"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="99dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="122dp"
+        android:layout_height="77dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="Achieve Back Button"
+        android:src="@drawable/poi_info_cancel_butt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

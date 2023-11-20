@@ -7,11 +7,17 @@
     android:background="@drawable/poi_selection"
     tools:context=".PoiSelectionActivity">
 
-    <!-- Filter Button -->
-
-    <!-- Text View -->
-
-    <!-- Saved Button -->
+    <ImageButton
+        android:id="@+id/poi_select_back_button"
+        android:layout_width="180dp"
+        android:layout_height="128dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="POI Select Back Button"
+        android:src="@drawable/poi_info_cancel_butt"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
         android:id="@+id/filter_butt"

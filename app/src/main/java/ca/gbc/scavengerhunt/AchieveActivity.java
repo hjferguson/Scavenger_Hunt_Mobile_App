@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 public class AchieveActivity extends AppCompatActivity {
 
@@ -15,7 +16,7 @@ public class AchieveActivity extends AppCompatActivity {
         setContentView(R.layout.activity_achieve);
 
 
-        Button achieve_back_button = findViewById(R.id.achieve_back_button);
+        ImageButton achieve_back_button = findViewById(R.id.achieve_back_button);
         achieve_back_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -23,10 +24,5 @@ public class AchieveActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
-
-
     }
 }
