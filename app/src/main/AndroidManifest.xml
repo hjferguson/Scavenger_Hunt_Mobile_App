@@ -13,12 +13,20 @@
         android:theme="@style/Theme.ScavengerHunt"
         tools:targetApi="31">
 
-        <!-- PoiSelectionActivity -->
+        <!-- PoiInfoActivity -->
         <activity
-            android:name=".PoiSelectionActivity"
+            android:name=".PoiInfoActivity"
             android:exported="false" />
 
+        
+      <!-- PoiSelectActivity -->
+        <activity
+            android:name=".PoiSelectionActivity"
+            android:exported="false" /> 
+
+
         <!-- SplashScreenActivity -->
+
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
