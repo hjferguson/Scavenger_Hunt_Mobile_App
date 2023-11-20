@@ -7,4 +7,5 @@
     <string name="facebook_button_description">Facebook Button</string>
     <string name="next_hunt_button_description">Next Hunt Button</string>
     <string name="back_button_description">Back Button</string>
+    <string name="about_activity_label">About</string>
 </resources>
