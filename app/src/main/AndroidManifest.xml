@@ -16,13 +16,16 @@
         <!-- PoiInfoActivity -->
         <activity
             android:name=".PoiInfoActivity"
-            android:exported="false" />
+            android:exported="false">
+        </activity>
 
 
-      <!-- PoiSelectActivity -->
+
+        <!-- PoiSelectActivity -->
         <activity
             android:name=".PoiSelectionActivity"
-            android:exported="false" />
+            android:exported="false" >
+        </activity>
 
 
         <!-- SplashScreenActivity -->
