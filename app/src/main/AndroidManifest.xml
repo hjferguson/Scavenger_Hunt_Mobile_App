@@ -28,6 +28,10 @@
             android:name=".CompletedHuntsActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".AchieveActivity"
+            android:exported="false" />
+
         <!-- PoiInfoActivity -->
         <activity
             android:name=".PoiInfoActivity"
