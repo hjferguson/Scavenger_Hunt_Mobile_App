@@ -9,10 +9,10 @@
 
     <ImageButton
         android:id="@+id/poi_select_back_button"
-        android:layout_width="180dp"
-        android:layout_height="128dp"
+        android:layout_width="94dp"
+        android:layout_height="72dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="40dp"
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="POI Select Back Button"
         android:src="@drawable/poi_info_cancel_butt"
@@ -20,11 +20,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageButton
-        android:id="@+id/filter_butt"
+        android:id="@+id/hunt_details_butt"
         android:layout_width="298dp"
         android:layout_height="54dp"
         android:layout_marginBottom="96dp"
-        android:background="@drawable/poi_selection_filter_butt"
+        android:background="@drawable/completed_hunts_details_butt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -37,7 +37,7 @@
         android:layout_marginBottom="12dp"
         android:text="@string/pois_nearby"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@id/filter_butt"
+        app:layout_constraintBottom_toTopOf="@id/hunt_details_butt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -50,7 +50,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/filter_butt"
+        app:layout_constraintTop_toBottomOf="@id/hunt_details_butt"
         app:layout_constraintVertical_bias="0.652" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

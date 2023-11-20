@@ -2,6 +2,7 @@ package ca.gbc.scavengerhunt;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -13,7 +14,6 @@ public class CompletedHuntsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completed_hunts);
-
 
         // Relates to returning to MainActivity
         ImageButton returnBtn = findViewById(R.id.mainPageReturn);
