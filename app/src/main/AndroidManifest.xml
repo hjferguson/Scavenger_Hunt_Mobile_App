@@ -57,6 +57,12 @@
                 android:value=".MainActivity"/>
         </activity>
 
+        <!-- ShareScreenActivity -->
+        <activity
+            android:name=".ShareScreenActivity"
+            android:exported="false"
+            ></activity>
+
     </application>
 
 </manifest>
