@@ -13,23 +13,7 @@
         android:theme="@style/Theme.ScavengerHunt"
         tools:targetApi="31">
 
-        <!-- PoiInfoActivity -->
-        <activity
-            android:name=".PoiInfoActivity"
-            android:exported="false">
-        </activity>
-
-
-
-        <!-- PoiSelectActivity -->
-        <activity
-            android:name=".PoiSelectionActivity"
-            android:exported="false" >
-        </activity>
-
-
-        <!-- SplashScreenActivity -->
-
+        <!-- SplashScreenActivity is the launcher activity -->
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true">
@@ -38,6 +22,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- CompletedHuntsActivity -->
+        <activity
+            android:name=".CompletedHuntsActivity"
+            android:exported="false" />
+
+        <!-- PoiInfoActivity -->
+        <activity
+            android:name=".PoiInfoActivity"
+            android:exported="false" />
+
+        <!-- PoiSelectActivity -->
+        <activity
+            android:name=".PoiSelectionActivity"
+            android:exported="false" />
 
         <!-- MainActivity -->
         <activity
