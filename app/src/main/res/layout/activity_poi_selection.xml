@@ -7,32 +7,33 @@
     android:background="@drawable/poi_selection"
     tools:context=".PoiSelectionActivity">
 
+    <!-- Filter Button -->
+
+    <!-- Text View -->
+
+    <!-- Saved Button -->
 
     <ImageButton
         android:id="@+id/filter_butt"
         android:layout_width="298dp"
         android:layout_height="54dp"
-        android:layout_marginLeft="56dp"
+        android:layout_marginBottom="96dp"
         android:background="@drawable/poi_selection_filter_butt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:layout_constraintVertical_bias="0.27" />
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="39dp"
-        android:layout_marginTop="852dp"
+        android:layout_marginBottom="12dp"
         android:text="@string/pois_nearby"
         android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@id/filter_butt"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/saved_butt"
@@ -41,10 +42,9 @@
         android:background="@drawable/poi_selection_save_butt"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.283"
-        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filter_butt"
-        app:layout_constraintVertical_bias="0.101" />
+        app:layout_constraintTop_toBottomOf="@id/filter_butt"
+        app:layout_constraintVertical_bias="0.652" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
