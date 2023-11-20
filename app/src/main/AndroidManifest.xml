@@ -18,11 +18,11 @@
             android:name=".PoiInfoActivity"
             android:exported="false" />
 
-        
+
       <!-- PoiSelectActivity -->
         <activity
             android:name=".PoiSelectionActivity"
-            android:exported="false" /> 
+            android:exported="false" />
 
 
         <!-- SplashScreenActivity -->

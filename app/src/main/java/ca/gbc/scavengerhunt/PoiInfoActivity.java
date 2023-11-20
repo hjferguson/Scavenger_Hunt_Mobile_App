@@ -28,7 +28,7 @@ public class PoiInfoActivity extends AppCompatActivity {
         shareButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PoiInfoActivity.this, ActivityB.class);
+                Intent intent = new Intent(PoiInfoActivity.this, ShareScreenActivity.class);
                 startActivity(intent);
             }
         });
@@ -36,7 +36,7 @@ public class PoiInfoActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PoiInfoActivity.this, ActivityC.class);
+                Intent intent = new Intent(PoiInfoActivity.this, PoiSelectionActivity.class);
                 startActivity(intent);
             }
         });
