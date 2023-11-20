@@ -2,4 +2,10 @@
     <string name="app_name">ScavengerHunt</string>
     <string name="pois_nearby">12 POIs nearby!</string>
     <string name="start_hunt_button">Start Hunt Button</string>
+    <string name="twitter_button_description">Twitter Button</string>
+    <string name="instagram_button_description">Instagram Button</string>
+    <string name="facebook_button_description">Facebook Button</string>
+    <string name="next_hunt_button_description">Next Hunt Button</string>
+    <string name="back_button_description">Back Button</string>
+    <string name="about_activity_label">About</string>
 </resources>
