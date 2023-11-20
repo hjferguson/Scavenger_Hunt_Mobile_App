@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
 
         ImageButton startButton = findViewById(R.id.start_button);
         ImageButton achieveButton = findViewById(R.id.achieve_button);
+        ImageButton shareButton = findViewById(R.id.share_button);
+        ImageButton settingsButton = findViewById(R.id.settings_button);
+        ImageButton viewHuntsButton = findViewById(R.id.view_button);
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -25,10 +28,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        viewHuntsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CompletedHuntsActivity.class);
+                startActivity(intent);
+            }
+        });
+
         achieveButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AchieveActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        shareButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ShareScreenActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        settingsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
                 startActivity(intent);
             }
         });
