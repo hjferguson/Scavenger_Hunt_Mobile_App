@@ -3,8 +3,10 @@ package ca.gbc.scavengerhunt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewTreeObserver;
 import android.widget.ImageButton;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -12,6 +14,7 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
@@ -75,24 +78,52 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
     }
 
     @Override
-    public void onMapReady(GoogleMap googleMap){
+    public void onMapReady(GoogleMap googleMap) {
         this.googleMap = googleMap;
 
-        //use function I wrote to generate fake POIs
         ArrayList<PointOfInterest> pois = PoiUtils.createSamplePois();
+        LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
-        //add markers for the POIs
-        for(PointOfInterest poi : pois){
+        // Add markers for the POIs and include them in the bounds
+        for (PointOfInterest poi : pois) {
             googleMap.addMarker(new MarkerOptions()
                     .position(poi.getCoordinates())
                     .title(poi.getName())
                     .snippet(poi.getDescription()));
+
+            builder.include(poi.getCoordinates());
         }
 
-        if(!pois.isEmpty()){
-            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pois.get(0).getCoordinates(), 10));
+        // Set up a ViewTreeObserver to wait for the layout
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN) {
+            mapView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    // Older versions of Android (before API level 16)
+                    mapView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    adjustCameraPosition(builder);
+                }
+            });
+        } else {
+            mapView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    mapView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    adjustCameraPosition(builder);
+                }
+            });
         }
     }
+
+    private void adjustCameraPosition(LatLngBounds.Builder builder) {
+        LatLngBounds bounds = builder.build();
+        int padding = 100; // Offset from edges of the map in pixels
+        googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, padding));
+    }
+
+
+
+
 
     @Override
     public void onResume() {
