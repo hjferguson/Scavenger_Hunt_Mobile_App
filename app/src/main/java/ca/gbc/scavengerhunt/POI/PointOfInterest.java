@@ -4,7 +4,7 @@ package ca.gbc.scavengerhunt.POI;
 import java.util.ArrayList;
 import com.google.android.gms.maps.model.LatLng;
 
-import ca.gbc.scavengerhunt.Achievement;
+import ca.gbc.scavengerhunt.AchievementLogic.Achievement;
 
 public class PointOfInterest {
     private String name;

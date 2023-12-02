@@ -1,4 +1,4 @@
-package ca.gbc.scavengerhunt;
+package ca.gbc.scavengerhunt.AchievementLogic;
 
 import java.util.Date;
 
@@ -6,11 +6,11 @@ public class Achievement {
 
     private String name;
     private String description;
-    private Date dateEarned;
+    private String dateEarned;
     private String imageUrl;
 
 
-    public Achievement (String name, String description, Date dateEarned, String imageUrl){
+    public Achievement (String name, String description, String dateEarned, String imageUrl){
 
         this.name = name;
         this.description = description;
@@ -27,7 +27,7 @@ public class Achievement {
         return description;
     }
 
-    public Date getDateEarned(){
+    public String getDateEarned(){
         return dateEarned;
     }
 
@@ -43,7 +43,7 @@ public class Achievement {
         this.description = description;
     }
 
-    public void setDateEarned(Date dateEarned){
+    public void setDateEarned(String dateEarned){
         this.dateEarned = dateEarned;
     }
 
