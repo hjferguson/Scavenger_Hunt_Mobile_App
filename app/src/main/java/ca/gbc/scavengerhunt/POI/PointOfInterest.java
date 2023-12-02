@@ -3,14 +3,18 @@ package ca.gbc.scavengerhunt.POI;
 
 import java.util.ArrayList;
 import com.google.android.gms.maps.model.LatLng;
+import java.io.Serializable;
 
 import ca.gbc.scavengerhunt.AchievementLogic.Achievement;
 
-public class PointOfInterest {
+//decided to make the object serializable to make it easier to pass the object between activities
+public class PointOfInterest implements Serializable{
+
     private String name;
     private String photoUrl;
     private String description;
-    private LatLng coordinates;
+    private transient LatLng coordinates; //transients stops this from getting serialized
+    //google's LatLng is not serializable. I'll think of a better workaround later... 👀
     private ArrayList<Achievement> achievements;
     private float rating;
     private String task;

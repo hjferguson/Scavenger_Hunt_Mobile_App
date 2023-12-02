@@ -1,8 +1,8 @@
 package ca.gbc.scavengerhunt.AchievementLogic;
 
-import java.util.Date;
+import java.io.Serializable;
 
-public class Achievement {
+public class Achievement implements Serializable{
 
     private String name;
     private String description;

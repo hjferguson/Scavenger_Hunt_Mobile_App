@@ -15,9 +15,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.model.LatLngBounds;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import ca.gbc.scavengerhunt.POI.PoiUtils;
 import ca.gbc.scavengerhunt.POI.PointOfInterest;
@@ -27,6 +29,8 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
 
     private MapView mapView;
     private GoogleMap googleMap;
+
+    private PointOfInterest selectedPoi = null; //need to track what the user is looking at 🕵️
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,10 +53,16 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
         huntDetailsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Intent to navigate to PoiInfoActivity
-                Intent intent = new Intent(PoiSelectionActivity.this, PoiInfoActivity.class);
-                // Start the PoiInfoActivity
-                startActivity(intent);
+
+                if(selectedPoi != null){
+                    Intent intent = new Intent(PoiSelectionActivity.this, PoiInfoActivity.class);
+                    intent.putExtra("POI_DATA", selectedPoi);
+                    startActivity(intent);
+                }else{
+                    System.out.println("no poi selected");
+                }
+
+
             }
         });
 
@@ -83,15 +93,17 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
 
         ArrayList<PointOfInterest> pois = PoiUtils.createSamplePois();
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
+        HashMap<Marker, PointOfInterest> markerPoiMap = new HashMap<>();
 
         // Add markers for the POIs and include them in the bounds
         for (PointOfInterest poi : pois) {
-            googleMap.addMarker(new MarkerOptions()
+            Marker marker = googleMap.addMarker(new MarkerOptions()
                     .position(poi.getCoordinates())
                     .title(poi.getName())
                     .snippet(poi.getDescription()));
-
             builder.include(poi.getCoordinates());
+
+            markerPoiMap.put(marker, poi); // Map marker to its POI
         }
 
         // Set up a ViewTreeObserver to wait for the layout
@@ -99,7 +111,6 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
             mapView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
                 @Override
                 public void onGlobalLayout() {
-                    // Older versions of Android (before API level 16)
                     mapView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
                     adjustCameraPosition(builder);
                 }
@@ -113,6 +124,16 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
                 }
             });
         }
+
+        // Marker click listener to track the selected POI
+        googleMap.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
+            @Override
+            public boolean onMarkerClick(Marker marker) {
+                selectedPoi = markerPoiMap.get(marker);
+                // Handle the selected POI, e.g., show more details button
+                return false; // Return false to indicate that we have not consumed the event
+            }
+        });
     }
 
     private void adjustCameraPosition(LatLngBounds.Builder builder) {
@@ -120,9 +141,6 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
         int padding = 100; // Offset from edges of the map in pixels
         googleMap.moveCamera(CameraUpdateFactory.newLatLngBounds(bounds, padding));
     }
-
-
-
 
 
     @Override
