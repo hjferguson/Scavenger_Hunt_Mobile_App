@@ -6,10 +6,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.MapsInitializer;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+import java.util.ArrayList;
+
+import ca.gbc.scavengerhunt.POI.PoiUtils;
+import ca.gbc.scavengerhunt.POI.PointOfInterest;
 
 
 public class PoiSelectionActivity extends AppCompatActivity implements OnMapReadyCallback {
@@ -69,6 +77,21 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
     @Override
     public void onMapReady(GoogleMap googleMap){
         this.googleMap = googleMap;
+
+        //use function I wrote to generate fake POIs
+        ArrayList<PointOfInterest> pois = PoiUtils.createSamplePois();
+
+        //add markers for the POIs
+        for(PointOfInterest poi : pois){
+            googleMap.addMarker(new MarkerOptions()
+                    .position(poi.getCoordinates())
+                    .title(poi.getName())
+                    .snippet(poi.getDescription()));
+        }
+
+        if(!pois.isEmpty()){
+            googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(pois.get(0).getCoordinates(), 10));
+        }
     }
 
     @Override
