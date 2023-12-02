@@ -6,8 +6,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.MapsInitializer;
 
-public class PoiSelectionActivity extends AppCompatActivity {
+
+public class PoiSelectionActivity extends AppCompatActivity implements OnMapReadyCallback {
+
+    private MapView mapView;
+    private GoogleMap googleMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,5 +54,51 @@ public class PoiSelectionActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        mapView = findViewById(R.id.mapView);
+        if(mapView != null){
+            mapView.onCreate(savedInstanceState);
+            mapView.getMapAsync(this);
+            MapsInitializer.initialize(this);
+        }
+
+
+
     }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap){
+        this.googleMap = googleMap;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mapView.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        mapView.onPause();
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        mapView.onDestroy();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        mapView.onLowMemory();
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        mapView.onSaveInstanceState(outState);
+    }
+
 }
