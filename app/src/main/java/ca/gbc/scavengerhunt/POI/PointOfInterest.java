@@ -1,21 +1,23 @@
 package ca.gbc.scavengerhunt.POI;
 
 
-
+import java.util.ArrayList;
 import com.google.android.gms.maps.model.LatLng;
+
+import ca.gbc.scavengerhunt.Achievement;
 
 public class PointOfInterest {
     private String name;
     private String photoUrl;
     private String description;
     private LatLng coordinates;
-    private String[] achievements;
+    private ArrayList<Achievement> achievements;
     private float rating;
     private String task;
     private String[] tags;
 
     public PointOfInterest(String name, String photoUrl, String description, LatLng coordinates,
-                            String[] achievements, float rating, String task, String[] tags ){
+                            ArrayList<Achievement> achievements, float rating, String task, String[] tags ){
 
         this.name = name;
         this.photoUrl = photoUrl;
@@ -44,7 +46,7 @@ public class PointOfInterest {
         return coordinates;
     }
 
-    public String[] getAchievements(){
+    public ArrayList<Achievement> getAchievements(){
         return achievements;
     }
 
@@ -76,7 +78,7 @@ public class PointOfInterest {
         this.coordinates = coordinates;
     }
 
-    public void setAchievements(String[] achievements){
+    public void setAchievements(ArrayList<Achievement> achievements){
         this.achievements = achievements;
     }
 
