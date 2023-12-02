@@ -6,8 +6,10 @@ Harlan Ferguson 101133838
 Wednesday 10am Lab
 <br>
 <h1>Setup Instructions</h1>
-<p>Please create a 'local.properties' file in the project's root directory.</p>
+<p>Please find or create a 'secrets.properties' file in the project's root directory.</p>
 <br>
 <p>Within that file, add "MAPS_API_KEY='the api key'"</p>
 <br>
 <p>You can get the api key from Harlan Ferguson</p>
+<br>
+<p>Issues? Here: https://developers.google.com/maps/documentation/android-sdk/start#kotlin </p>
