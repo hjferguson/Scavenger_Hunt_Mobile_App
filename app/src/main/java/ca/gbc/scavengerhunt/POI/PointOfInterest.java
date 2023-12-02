@@ -1,4 +1,4 @@
-package ca.gbc.scavengerhunt;
+package ca.gbc.scavengerhunt.POI;
 
 
 
