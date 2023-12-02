@@ -8,6 +8,7 @@ public class PoiUtils {
     public static ArrayList<PointOfInterest> createSamplePois() {
         ArrayList<PointOfInterest> pois = new ArrayList<>();
         String[] names = {"Stairs", "George Brown College", "Tim Hortons", "Pour House", "Hipster Coffee"};
+        String[] photos = {"pic_steps","pic_gbc","pic_timmies","pic_pourhouse","pic_hipster"};
         LatLng[] coords = {
                 new LatLng(43.677492, -79.408194),
                 new LatLng(43.676271, -79.410907),
@@ -19,7 +20,7 @@ public class PoiUtils {
 
         for (int i = 0; i < names.length; i++) {
             pois.add(new PointOfInterest(
-                    names[i], "path/to/photo" + i, "A place: " + names[i],
+                    names[i], photos[i], "A place: " + names[i],
                     coords[i], AchievementUtils.createSampleAchievements(),
                     4, "Stand within 10m of poi", tags));
         }

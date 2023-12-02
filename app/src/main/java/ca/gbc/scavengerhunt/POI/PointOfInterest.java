@@ -11,7 +11,7 @@ import ca.gbc.scavengerhunt.AchievementLogic.Achievement;
 public class PointOfInterest implements Serializable{
 
     private String name;
-    private String photoUrl;
+    private String photo;
     private String description;
     private transient LatLng coordinates; //transients stops this from getting serialized
     //google's LatLng is not serializable. I'll think of a better workaround later... 👀
@@ -20,11 +20,11 @@ public class PointOfInterest implements Serializable{
     private String task;
     private String[] tags;
 
-    public PointOfInterest(String name, String photoUrl, String description, LatLng coordinates,
-                            ArrayList<Achievement> achievements, float rating, String task, String[] tags ){
+    public PointOfInterest(String name, String photo, String description, LatLng coordinates,
+                           ArrayList<Achievement> achievements, float rating, String task, String[] tags ){
 
         this.name = name;
-        this.photoUrl = photoUrl;
+        this.photo = photo;
         this.description = description;
         this.coordinates = coordinates;
         this.achievements = achievements;
@@ -38,8 +38,8 @@ public class PointOfInterest implements Serializable{
         return name;
     }
 
-    public String getPhotoUrl(){
-        return photoUrl;
+    public String getPhoto(){
+        return photo;
     }
 
     public String getDescription(){
@@ -70,8 +70,8 @@ public class PointOfInterest implements Serializable{
         this.name = name;
     }
 
-    public void setPhotoUrl(String photoUrl){
-        this.photoUrl = photoUrl;
+    public void setPhoto(String photo){
+        this.photo = photo;
     }
 
     public void setDescription(String description){
