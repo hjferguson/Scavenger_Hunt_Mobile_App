@@ -8,12 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import ca.gbc.scavengerhunt.POI.PointOfInterest;
+
 public class CompletedHuntsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_completed_hunts);
+
+        //get poi from previous screen
+        PointOfInterest poi = (PointOfInterest) getIntent().getSerializableExtra("POI_DATA");
+        //this is a test, remove when done...
+        System.out.println("On the completed hunts... The title: " + poi.getName() + " and the desc: " + poi.getDescription());
 
         // Relates to returning to MainActivity
         ImageButton returnBtn = findViewById(R.id.mainPageReturn);

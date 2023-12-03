@@ -6,11 +6,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 
+import ca.gbc.scavengerhunt.POI.PointOfInterest;
+
 public class ShareScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.share_screen_layout);
+
+        //get poi from previous screen
+        PointOfInterest poi = (PointOfInterest) getIntent().getSerializableExtra("POI_DATA");
+        //this is a test, remove when done...
+        System.out.println("On share screen... The title: " + poi.getName() + " and the desc: " + poi.getDescription());
+
 
         ImageButton twitterButton = findViewById(R.id.twitterButton);
         ImageButton instagramButton = findViewById(R.id.instagramButton);
