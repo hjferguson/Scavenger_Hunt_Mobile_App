@@ -17,8 +17,8 @@ public class PoiInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poi_info);
 
+        //get poi from previous screen
         PointOfInterest poi = (PointOfInterest) getIntent().getSerializableExtra("POI_DATA");
-        System.out.println("Poi in the more details: " + poi.getName() + " " + poi.getDescription()); //delete after testing
 
         TextView poiTitle = findViewById(R.id.poiTitle);
         TextView poiDesc = findViewById(R.id.poiDesc);
@@ -28,6 +28,7 @@ public class PoiInfoActivity extends AppCompatActivity {
         ImageButton shareButton = findViewById(R.id.shareButt);
         ImageButton cancelButton = findViewById(R.id.cancelButt);
 
+        //inject the poi data into the views
         if (poi != null) {
             poiTitle.setText(poi.getName());
             poiDesc.setText(poi.getDescription());
@@ -42,7 +43,8 @@ public class PoiInfoActivity extends AppCompatActivity {
         collectButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PoiInfoActivity.this, PoiSelectionActivity.class);
+                Intent intent = new Intent(PoiInfoActivity.this, CompletedHuntsActivity.class);
+                intent.putExtra("POI_DATA", poi);
                 startActivity(intent);
             }
         });
@@ -51,6 +53,7 @@ public class PoiInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(PoiInfoActivity.this, ShareScreenActivity.class);
+                intent.putExtra("POI_DATA", poi);
                 startActivity(intent);
             }
         });
@@ -58,8 +61,7 @@ public class PoiInfoActivity extends AppCompatActivity {
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(PoiInfoActivity.this, PoiSelectionActivity.class);
-                startActivity(intent);
+                finish(); //returns to previous screen
             }
         });
     }
