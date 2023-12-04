@@ -8,4 +8,5 @@
     <string name="next_hunt_button_description">Next Hunt Button</string>
     <string name="back_button_description">Back Button</string>
     <string name="about_activity_label">About</string>
+    <string name="email_button_description">Email</string>
 </resources>
