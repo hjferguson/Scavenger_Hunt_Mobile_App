@@ -11,6 +11,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataManager.getInstance();
         setContentView(R.layout.splash_screen_layout);
 
         // Set a delay for the splash screen

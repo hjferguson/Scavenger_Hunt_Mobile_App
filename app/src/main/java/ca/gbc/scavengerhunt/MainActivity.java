@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataManager.getInstance();
         setContentView(R.layout.activity_main);
 
         ImageButton startButton = findViewById(R.id.start_button);

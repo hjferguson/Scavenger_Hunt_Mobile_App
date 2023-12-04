@@ -13,6 +13,7 @@ public class AchieveActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataManager.getInstance();
         setContentView(R.layout.activity_achieve);
 
 

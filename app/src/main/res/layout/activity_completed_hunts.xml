@@ -24,9 +24,9 @@
 
     <ScrollView
         android:id="@+id/completedHunts"
-        android:layout_width="149dp"
-        android:layout_height="136dp"
-        android:layout_marginTop="8dp"
+        android:layout_width="317dp"
+        android:layout_height="447dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintBottom_toTopOf="@+id/completedHuntsButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
@@ -40,27 +40,64 @@
             android:paddingTop="35dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/completedHunt1"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="Completed Hunt 1"
-                android:textSize="25sp"
-                android:textColor="#004900"/>
+                android:text=""
+                android:textColor="#004900"
+                android:textSize="25sp" />
+
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:id="@+id/completedHunt2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:text="Completed Hunt 2"
-                android:textSize="25sp"
-                android:textColor="#004900"/>
+                android:text=""
+                android:textColor="#004900"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/completedHunt3"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#004900"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/completedHunt4"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#004900"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/completedHunt5"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text=""
+                android:textColor="#004900"
+                android:textSize="25sp" />
         </LinearLayout>
+
     </ScrollView>
+
 
     <ImageButton
         android:id="@+id/completedHuntsButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="228dp"
+        android:layout_marginTop="50dp"
         android:contentDescription="Button for displaying completed hunt details"
         android:src="@drawable/completed_hunts_details_butt"
         app:layout_constraintEnd_toEndOf="parent"
