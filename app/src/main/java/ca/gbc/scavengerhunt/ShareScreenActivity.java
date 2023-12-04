@@ -12,6 +12,7 @@ public class ShareScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataManager.getInstance();
         setContentView(R.layout.share_screen_layout);
 
         // get poi from previous screen

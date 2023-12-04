@@ -10,6 +10,7 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataManager.getInstance();
         setContentView(R.layout.about_screen_layout);
 
         ImageButton backButtonAbout = findViewById(R.id.backButtonAbout);
