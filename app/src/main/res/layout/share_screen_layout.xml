@@ -6,93 +6,81 @@
     android:background="@drawable/share_screen">
 
     <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="62dp"
+        android:layout_height="62dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="11dp"
+        android:layout_marginTop="3dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/back_button_description"
+        android:src="@drawable/poi_info_cancel_butt" />
+
+    <ImageButton
         android:id="@+id/twitterButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="103dp"
-        android:layout_marginTop="530dp"
-        android:layout_marginEnd="254dp"
-        android:layout_marginBottom="156dp"
-        android:padding="16dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="182dp"
+        android:layout_toEndOf="@+id/facebookButton"
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/twitter_button_description"
+        android:padding="16dp"
         android:src="@drawable/twitter" />
 
     <ImageButton
         android:id="@+id/instagramButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="528dp"
-        android:layout_marginEnd="97dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="182dp"
+        android:layout_toEndOf="@+id/twitterButton"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/instagram_button_description"
         android:padding="16dp"
-    android:background="?android:attr/selectableItemBackground"
-    android:contentDescription="@string/instagram_button_description"
-    android:src="@drawable/instagram" />
-
+        android:src="@drawable/instagram" />
 
     <ImageButton
         android:id="@+id/facebookButton"
-        android:layout_width="57dp"
-        android:layout_height="53dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="183dp"
-        android:layout_marginTop="491dp"
-        android:layout_marginEnd="176dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="182dp"
+        android:layout_toEndOf="@+id/emailButton"
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/facebook_button_description"
+        android:padding="16dp"
         android:src="@drawable/facebook" />
 
     <ImageButton
-        android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="56dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="11dp"
-        android:layout_marginTop="8dp"
-        android:background="?android:attr/selectableItemBackground"
-        android:contentDescription="@string/back_button_description"
-        android:src="@drawable/poi_info_cancel_butt" />
-
-    <ImageButton
         android:id="@+id/nextHuntButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:src="@drawable/share_screen_next_hunt_butt"
-        android:background="?android:attr/selectableItemBackground"
-        android:layout_centerHorizontal="true"
+        android:layout_width="361dp"
+        android:layout_height="55dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:contentDescription="@string/next_hunt_button_description" />
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="32dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:contentDescription="@string/next_hunt_button_description"
+        android:src="@drawable/share_screen_next_hunt_butt" />
 
     <ImageButton
         android:id="@+id/emailButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="188dp"
-        android:layout_marginTop="554dp"
-        android:layout_marginEnd="172dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="182dp"
         android:background="?android:attr/selectableItemBackground"
         android:contentDescription="@string/email_button_description"
+        android:padding="16dp"
         android:src="@drawable/email_icon" />
 
 </RelativeLayout>
-
-
