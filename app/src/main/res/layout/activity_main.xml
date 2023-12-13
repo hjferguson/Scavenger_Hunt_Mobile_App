@@ -33,7 +33,7 @@
 
             <ImageButton
                 android:id="@+id/view_button"
-                android:layout_width="216dp"
+                android:layout_width="201dp"
                 android:layout_height="130dp"
                 android:layout_row="0"
                 android:background="@color/black"
