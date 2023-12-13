@@ -1,5 +1,6 @@
 package ca.gbc.scavengerhunt;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -19,6 +20,8 @@ public class AboutActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
+                Intent intent = new Intent(AboutActivity.this, MainActivity.class);
+                startActivity(intent);
             }
         });
     }
