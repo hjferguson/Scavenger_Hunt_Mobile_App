@@ -35,6 +35,7 @@ public class PoiSelectionActivity extends AppCompatActivity implements OnMapRead
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataManager.getInstance();
         setContentView(R.layout.activity_poi_selection);
 
         ImageButton poiSelectBackButton = findViewById(R.id.poi_select_back_button);

@@ -15,6 +15,7 @@ public class PoiInfoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        DataManager.getInstance();
         setContentView(R.layout.activity_poi_info);
 
         //get poi from previous screen
